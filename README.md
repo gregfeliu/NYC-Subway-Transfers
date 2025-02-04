@@ -1,7 +1,7 @@
 # NYC Subway Transfer Ratios
 
 ## Introduction
-Multi-modal transportation is one of the key ways to make transportation work for everyone. Not every mode of transportation is warranted in all areas so operating the right one for a corridor is vital to a well functioning system. In New York City, urban rail and buses integrate seamlessly using OMNY and Metrocard payment systems. They help integrate the confusing, multi-agency web of transportation services provided in the region (the full list of fare integrated connections can be seen [here](https://en.wikipedia.org/wiki/New_York_City_transit_fares#Current_fares)). Using the [hourly subway ridership dataset](https://data.ny.gov/Transportation/MTA-Subway-Hourly-Ridership-2020-2024/wujg-7c2s/about_data) one can see both the number of transfers and the number of total riders (including transfers) at each subway station in the MTA. I wondered: **which subway stations are most reliant on transfers**? In other words, which stations have the highest proportion of transfers to riders in the system?  
+Multi-modal transportation is one of the key ways to make transportation work for everyone. Not every mode of transportation is warranted in all areas so operating the right one for a corridor is vital to a well functioning system. In New York City, urban rail and buses integrate seamlessly using the OMNY and Metrocard payment systems. They help integrate the confusing, multi-agency web of transportation services provided in the region (the full list of fare integrated connections can be seen [here](https://en.wikipedia.org/wiki/New_York_City_transit_fares#Current_fares)). Using the [hourly subway ridership dataset](https://data.ny.gov/Transportation/MTA-Subway-Hourly-Ridership-2020-2024/wujg-7c2s/about_data) one can see both the number of transfers and the number of total riders (including transfers) at each subway station in the MTA. I wondered: **which subway stations are most reliant on transfers**? In other words, which stations have the highest proportion of transfers to riders in the system?  
 
 ## Process
 To answer this, I grouped all stations into complexes (e.g.: Metropolitan-Lorimer St is composed of both the G and L stations) and summed up their transfer and rider numbers for 2024. With this data, I divided the number of transfers by the number of riders to find the ratio of transfers to riders for that complex's ridership (the higher the number, the more reliant it is on transfers). 
@@ -17,6 +17,7 @@ There are some important caveats to this data:
     - the PATH to subway
     - any ferry to the subway (although SIR -> SI ferry -> subway station below Fulton St counts)
     - commuter rail (MNR, LIRR, NJ Transit) to subway
+    - local bus to local bus (although this is a valid free in system transfer)
  
 ## Results
 The majority of NYC subway stations have a relatively low transfer ratio in the 1%-5% range. There are a few, however, that can be up to 6 times higher -- the highest being 35%! 
