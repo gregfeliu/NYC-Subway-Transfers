@@ -17,7 +17,7 @@ There are some important caveats to this data:
     - the PATH to subway
     - any ferry to the subway (although SIR -> SI ferry -> subway station below Fulton St counts)
     - commuter rail (MNR, LIRR, NJ Transit) to subway
-    - local bus to local bus (although this is a valid free in system transfer)
+    - local bus to local bus (although this is a valid free in-system transfer)
  
 ## Results
 The majority of NYC subway stations have a relatively low transfer ratio in the 1%-5% range. There are a few, however, that can be up to 6 times higher -- the highest being 35%! 
@@ -28,13 +28,21 @@ The locations of the high and low transfer ratio subway stations are quite inter
 
 ![](saved_data/all_station_transfer_ratios.png)
 
-The areas with low ridership ratios are immediately identifiable as the Central Business Districts of NYC. This makes a lot of sense since people who work very close to these high-density districts can walk to the subway. Additionally, since so many subway lines converge in these areas there's little need for a bus to subway transfer. On the other hand, the high transfer ratio stations need a closer look. To start, let's isolate the 20 highest transfer stations: 
+The areas with low ridership ratios are immediately identifiable as the Central Business Districts of NYC. This makes a lot of sense since people who work very close to these high-density districts can walk to the subway. Additionally, since so many subway lines converge in these areas there's little need for a bus to subway transfer and an in-station subway-to-subway transfer is more likely (and not counted in the data). On the other hand, the high transfer ratio stations need a closer look. To start, let's isolate the 20 highest transfer stations: 
 
 ![](saved_data/top_20_station_transfer_ratios.png)
 
-The majority of these stations are at, or near, the terminal of a subway branch. These stations are all bus hubs that bring riders from outside the walkable catchment area to the subway system. The Bronx is a great example where 3 of the 5 terminals are found in the top 20 list. Not only does the NYC bus system serve these stations but the Bee-Line bus system in Westchester does, too. In fact, about a [quarter of all Bee-Line riders](https://tstc.org/wp-content/uploads/2024/07/2024-07-08_Buzz-on-the-Bee-Line-2.0.pdf) ride the bus in order to transfer to the subway. Another notable example is Junius St and Livonia Avenue in Eastern Brooklyn (the two dots close to each other): the 3 and the L require an out of station transfer in order to connect. 
+The majority of these stations are at, or near, the terminal of a subway branch. These stations are all bus hubs that bring riders from outside the walkable catchment area to the subway system. The Bronx is a great example where 3 of the 5 terminals are found in the top 20 list. Not only does the NYC bus system serve these stations but the Bee-Line bus system in Westchester does, too. In fact, about a [quarter of all Bee-Line riders](https://tstc.org/wp-content/uploads/2024/07/2024-07-08_Buzz-on-the-Bee-Line-2.0.pdf) ride the bus in order to transfer to the subway. 
 
-The most interesting case is the dark red dot in Brooklyn: Bay Parkway on the F line. It's a station with a single (albeit quite [popular](https://www.mta.info/document/113336)) bus line: the B6. So what gives? The answer is more obvious when you take a look at what's *not* around the station: 
+Interestingly the transfers at terminal stations near the Bee-Line and NICE systems can differ by payment system, too: Metrocard is significantly more preferred for transfers at these stations than Metrocard is for other stations in the system. The reason should be obvious: in order for a rider to connect to the Bee-Line or NICE systems on the same fare they need to use a Metrocard. The majority of these stations are in the north Bronx but Far Rockaway-Mott Ave is also in the top 6. Moreover, the stations with the most preference for OMNY are high transfer stations away from terminals. The top 6 of both of these categories can be seen below: 
+
+![](saved_data/station_transfer_ratios_by_payment.png)
+
+The blue dots show stations where the average Metrocard user is more likely to transfer than the average OMNY user (this is the minority of stations in the system). The red dots show stations where the average Metrocard user is *less* likely to transfer than the average OMNY user (the ones in the map are only the top 6 of this kind). Even so, the proportions not drastically different one way or another: the minimum and maximum difference in payment method transfer ratios is +/-15%.   
+
+Of course, there are other high transfer ratio stations that *don't* primarily rely on bus-to-subway transfers for their transfers: out-of-system transfers are required in between 2 sets of complexes. The one with a very high transfer ratio is Junius St and Livonia Avenue in Eastern Brooklyn (the two dots close to each other): the 3 and the L require an out of station transfer in order to connect. 
+
+To me, the most interesting high station transfer ratio involves the dark red dot in Brooklyn: Bay Parkway on the F line. It's a station with a single (albeit quite [popular](https://www.mta.info/document/113336)) bus line: the B6. So what gives? The answer is more obvious when you take a look at what's *not* around the station: 
 
 ![](saved_data/Bay_Pkwy_screenshot.png)
 
