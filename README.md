@@ -4,14 +4,15 @@
 Multi-modal transportation is one of the key ways to make transportation work for everyone. Not every mode of transportation is warranted in all areas so operating the right one for a corridor is vital to a well functioning system. In New York City, urban rail and buses integrate seamlessly using the OMNY and Metrocard payment systems. They help integrate the confusing, multi-agency web of transportation services provided in the region (the full list of fare integrated connections can be seen [here](https://en.wikipedia.org/wiki/New_York_City_transit_fares#Current_fares)). Using the [hourly subway ridership dataset](https://data.ny.gov/Transportation/MTA-Subway-Hourly-Ridership-2020-2024/wujg-7c2s/about_data) one can see both the number of transfers and the number of total riders (including transfers) at each subway station in the MTA. I wondered: **which subway stations are most reliant on transfers**? In other words, which stations have the highest proportion of transfers to riders in the system?  
 
 ## Process
-To answer this, I grouped all stations into complexes (e.g.: Metropolitan-Lorimer St is composed of both the G and L stations) and summed up their transfer and rider numbers for 2024. With this data, I divided the number of transfers by the number of riders to find the ratio of transfers to riders for that complex's ridership (the higher the number, the more reliant it is on transfers). 
+To answer this, I grouped all stations into complexes (e.g.: Metropolitan-Lorimer St is composed of both the G and L stations) and summed up their transfer and rider numbers for 2024. With this data, I divided the number of transfers by the number of riders to find the transfer-to-total-ridership ratio (the higher the number, the more reliant it is on transfers for ridership). 
 
 There are some important caveats to this data:
-1. Ridership is defined as the number of riders who *entered* at this subway station -- not the total number of people who use this station in general
+1. Ridership is defined as the number of riders who *entered* at a subway station -- not the total number of people who use this station in general. Therefore, **the ratios are doubled to get a true estimate of the transfer ratio**. In other words, I'm asking *what's the ratio of users who make an out-of-system transfer to or from each subway station?*
 2. The transfers here include:
     - bus to subway transfers (MTA Local bus, (most) MTA Express buses, NICE buses, Westchester Bee-Line buses)
     - out-of-network subway transfers (Livonia Ave (L) <> Junius St (3) and Lexington-59th St <> Lexington 63rd St are the only ones in the system)
     - Roosevelt Island Tram to the subway
+    Note that we only have one direction of transfers (e.g.: MTA local bus -> subway but not subway -> MTA local bus).
 3. The transfers *not* included are:
     - between subway services in the same complex (e.g.: 1 -> 2/3)
     - the PATH to subway
